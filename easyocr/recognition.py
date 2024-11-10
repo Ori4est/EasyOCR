@@ -156,7 +156,7 @@ def get_recognizer(recog_network, network_params, character,\
 
     converter = CTCLabelConverter(character, separator_list, dict_list)
     num_class = len(converter.character)
-
+    print(f" recognizer char {character}, {converter}, {num_class}")
     if recog_network == 'generation1':
         model_pkg = importlib.import_module("easyocr.model.model")
     elif recog_network == 'generation2':
