@@ -8,4 +8,5 @@ include easyocr/scripts/compile_dbnet_dcn.py
 recursive-include easyocr/DBNet *
 
 include easyocr/custom_model/*.py
+include easyocr/custom_model/*.yaml
 include easyocr/custom_model/modules/*
