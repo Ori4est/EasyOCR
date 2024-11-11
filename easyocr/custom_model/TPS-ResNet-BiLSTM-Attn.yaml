@@ -10,6 +10,7 @@ network_params:
   imgH: 64
   imgW: 100
   batch_max_length: 25
+imgH: 64
 lang_list:
          - 'en'
 character_list: 0123456789!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ €ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
