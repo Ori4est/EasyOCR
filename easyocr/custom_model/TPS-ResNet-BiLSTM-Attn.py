@@ -65,7 +65,7 @@ class Model(nn.Module):
         if opt.Prediction == 'CTC':
             self.Prediction = nn.Linear(self.SequenceModeling_output, num_class)
         elif opt.Prediction == 'Attn':
-            self.Prediction = Attention(self.SequenceModeling_output, opt.hidden_size, opt.num_class)
+            self.Prediction = Attention(self.SequenceModeling_output, opt.hidden_size, num_class)
         else:
             raise Exception('Prediction is neither CTC or Attn')
 
