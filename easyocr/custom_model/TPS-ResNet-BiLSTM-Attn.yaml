@@ -7,7 +7,8 @@ network_params:
   FeatureExtraction: 'ResNet'
   SequenceModeling: 'BiLSTM'
   Prediction: 'Attn'
-imgH: 64
+  imgH: 64
+  imgW: 64
 lang_list:
          - 'en'
 character_list: 0123456789!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ €ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
