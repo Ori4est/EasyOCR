@@ -165,6 +165,9 @@ def get_recognizer(recog_network, network_params, character,\
         model = model_pkg.Model(num_class=num_class, **network_params)
     else:
         model_pkg = importlib.import_module(recog_network)
+        if isinstant(network_params, dict):
+            import argparse
+            network_params = argparse.Namespace(**network_params)
         model = model_pkg.Model(num_class, network_params) # dict, *posargs, **kwargs
 
     if device == 'cpu':
