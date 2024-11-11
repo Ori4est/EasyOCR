@@ -82,7 +82,13 @@ def get_detector(trained_model, device='cpu', quantize=True, cudnn_benchmark=Fal
             except:
                 pass
     else:
-        net.load_state_dict(copyStateDict(torch.load(trained_model, map_location=device, weights_only=False)))
+        try:
+            net.load_state_dict(copyStateDict(torch.load(trained_model, map_location=device, weights_only=False)))
+        except:
+            try:
+                net.load_state_dict(copyStateDict(torch.load(trained_model, map_location=device, weights_only=False)['craft']))
+            except Exception as  e:
+                print(f"Unknown pth struct. {e}.")
         net = torch.nn.DataParallel(net).to(device)
         cudnn.benchmark = cudnn_benchmark
 
