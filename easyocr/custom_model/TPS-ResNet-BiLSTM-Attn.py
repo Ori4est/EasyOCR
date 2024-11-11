@@ -26,7 +26,7 @@ from modules.prediction import Attention
 
 class Model(nn.Module):
 
-    def __init__(self, opt):
+    def __init__(self, num_class, opt):
         super(Model, self).__init__()
         self.opt = opt
         self.stages = {'Trans': opt.Transformation, 'Feat': opt.FeatureExtraction,
@@ -63,7 +63,7 @@ class Model(nn.Module):
 
         """ Prediction """
         if opt.Prediction == 'CTC':
-            self.Prediction = nn.Linear(self.SequenceModeling_output, opt.num_class)
+            self.Prediction = nn.Linear(self.SequenceModeling_output, num_class)
         elif opt.Prediction == 'Attn':
             self.Prediction = Attention(self.SequenceModeling_output, opt.hidden_size, opt.num_class)
         else:
