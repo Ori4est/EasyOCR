@@ -1,16 +1,17 @@
 network_params:
   num_fiducial: 20
   input_channel: 1
-  output_channel: 256
+  output_channel: 512
   hidden_size: 256
   Transformation: 'TPS'
   FeatureExtraction: 'ResNet'
   SequenceModeling: 'BiLSTM'
   Prediction: 'Attn'
-  imgH: 64
+  imgH: 32
   imgW: 100
   batch_max_length: 25
-imgH: 64
+imgH: 32
 lang_list:
          - 'en'
-character_list: 0123456789!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ €ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+#character_list: 0123456789!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ €ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+character_list: 0123456789abcdefghijklmnopqrstuvwxyz#
